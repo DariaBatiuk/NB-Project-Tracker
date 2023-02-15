@@ -45,11 +45,11 @@ Project.init(
         isEmail: true,
       },
     },
-    user_id: {
+    id_user: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
-        key: "id",
+        key: "id_user",
       },
     },
   },

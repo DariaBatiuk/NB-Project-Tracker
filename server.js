@@ -18,9 +18,9 @@ app.use("/", routes);
 
 //TODO: Uncomment to make use of database, once set up
 sequelize.sync({force: false}).then(()=>{
-    app.listen(PORT, () => {
-        console.log(`Server is listening at http://localhost:${PORT}`)
-    });
+     app.listen(PORT, () => {
+          console.log(`Server is listening at http://localhost:${PORT}`)
+     });
 });
 
 app.use(express.json());
@@ -44,7 +44,3 @@ app.post('/getToken', async (req, res) => {
     res.status(500).send('Error while fetching access token');
   }
 });
-
-// app.listen(PORT, () => {
-//   console.log(`Server is listening at http://localhost:${PORT}`);
-// });

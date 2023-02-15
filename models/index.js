@@ -2,10 +2,10 @@ const User = require('./User');
 const Project = require ('./Project');
 
 User.hasMany(Project, {
-	foreignKey: 'user_id',
+	foreignKey: 'id_user',
 });
 Project.belongsTo(User, {
-  foreignKey: 'gallery_id',
+     foreignKey: 'id_project',
 });
 
 //Export your models so that it can be required in the server.js
