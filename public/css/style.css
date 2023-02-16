@@ -52,6 +52,14 @@ form{
   left: 0;
 }
 
+.del:hover {
+  background-color: red;
+}
+
+.edit:hover {
+  background-color: green;
+}
+
 .is-4:hover .del, .is-4:hover .edit {
   display: block;
   height: 50px;

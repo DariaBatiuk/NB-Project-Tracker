@@ -1,8 +1,18 @@
 const router = require('express').Router();
 
+const { Project, User, Projecttouser } = require('../models');
+
 router.get('/', async (req, res) => {
-  // send uuser data to the myprofile page to be displayed later
-  res.render('myprofile');
+ try {
+    const postsdata = await Project.findAll()
+
+    const posts = postsdata.map((post) => post.get({ plain: true }));
+
+    res.render('myprofile', {
+      posts});
+  } catch (err) {
+    res.status(500).json(err);
+ }
 });
 
 module.exports = router;

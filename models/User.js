@@ -20,10 +20,10 @@ User.init(
           type: DataTypes.STRING,
           allowNull: false,
      },
-		 github_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
+	github_id: {
+          type: DataTypes.STRING,
+          allowNull: false,
+     }
      },
      {
      hooks: {

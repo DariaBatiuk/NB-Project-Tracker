@@ -1,14 +1,14 @@
 const User = require('./User');
-const Project = require ('./Project');
+const Project = require('./Project');
+const Projecttouser = require('./Projecttouser');
 
-User.hasMany(Project, {
-	foreignKey: 'user_id',
+User.belongsToMany(Project, {
+     through: Projecttouser,
+     foreignKey: 'id_user'
 });
-Project.belongsTo(User, {
-  foreignKey: 'gallery_id',
+Project.belongsToMany(User, {
+     through: Projecttouser,
+     foreignKey: 'id_project'
 });
 
-//Export your models so that it can be required in the server.js
-// and/or routes files
-module.exports = { User, Project };
-
+module.exports = { User, Project, Projecttouser };
