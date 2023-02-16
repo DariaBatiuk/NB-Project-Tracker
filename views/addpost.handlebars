@@ -5,7 +5,7 @@
 
 <p class="title has-text-centered">New Post</p>
 
- <div class="field">
+ {{!-- <div class="field">
     <label class="label">Select a Repo</label>
     <div class="control">
       <div class="select">
@@ -14,17 +14,17 @@
         </select>
       </div>
     </div>
-  </div>
+  </div> --}}
 
  <div class="field">
-    <label class="label">Title</label>
+    <label class="label">{{title}}</label>
     <div class="control">
       <input class="input" id="title" type="text" placeholder="Awesome Project...">
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Description</label>
+    <label class="label">{{description}}</label>
     <div class="control">
       <textarea class="textarea" id="desc" placeholder="..." style="resize: none;"></textarea>
     </div>
@@ -32,19 +32,19 @@
 
 
 <div class="field">
-    <label class="label">Skills</label>
+    <label class="label">{{skills}}</label>
     <div class="control">
       <textarea class="textarea" id="skills" placeholder="..." style="resize: none;"></textarea>
     </div>
   </div>
 
 
-  <div class="field">
+  {{!-- <div class="field">
     <label class="label">Tags</label>
     <div class="control">
       <input class="input" id="tags" type="text" placeholder="JS">
     </div>
-  </div>
+  </div> --}}
 
   <div class="field">
     <label class="label">Collaborators</label>
