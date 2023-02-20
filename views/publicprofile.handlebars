@@ -51,7 +51,6 @@
 
 </section>
 
- {{!-- {{> post}} --}}
-
-
-<script src="/js/myprofile.js"></script>
+{{#each posts as |project|}}
+{{>post}}
+{{/each}}
