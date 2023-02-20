@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Op = require('sequelize').Op;
 
 const { Project, User, Projecttouser } = require('../models');
 
@@ -12,7 +13,7 @@ if (!req.session.user) {
 
 
  try {
-    const postsdata = await Project.findAll()
+    const postsdata = await Project.findAll({ where: { github_repo: { [Op.like]: `%${req.session.user.login}%` } } });
 
     const posts = postsdata.map((post) => post.get({ plain: true }));
 
