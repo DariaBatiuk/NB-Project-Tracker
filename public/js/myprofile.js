@@ -17,7 +17,7 @@ editBoxClose.addEventListener('click', function () {
 
   editBtn.forEach(function (button) {
     button.addEventListener('click', function (event) {
-   
+  
       editBox.style.display = 'flex'
       editBox.style.justifyContent = 'center'
       editBox.style.alignItems = 'center'
@@ -27,8 +27,21 @@ editBoxClose.addEventListener('click', function () {
       editBox.style.backgroundColor = 'rgba(0,0,0,0.5)'
       const ancestor = event.target.closest('[data-id-project]');
       const id = ancestor.dataset.idProject;
-     
-
+  
+      const title = event.target.closest('.card').querySelector('.title').innerText
+      const description = event.target.closest('.card').querySelector('.desc').innerText
+      const skills = event.target.closest('.card').querySelector('.skills').innerText
+      const email = event.target.closest('.card').querySelector('.email').getAttribute('href').replace('mailto:', '')
+      const github_repo = event.target.closest('.card').querySelector('.repo').getAttribute('href')
+  
+      document.querySelector('#title').value = title
+      document.querySelector('#desc').value = description
+      document.querySelector('#skills').value = skills
+      document.querySelector('#email').value = email
+      document.querySelector('#repo').value = github_repo
+  
+  
+  
       saveBtn.addEventListener('click', function () {
         edit(id)
       }
