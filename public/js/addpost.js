@@ -1,6 +1,6 @@
 
 
-
+const validRepoUrl = /^https?:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
 
 const newPostHandler = async (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ const newPostHandler = async (event) => {
     const skills = document.querySelector('#skills').value
     const email = document.querySelector('#email').value.trim();
 
-    if (github_repo && title && description && skills && email) {
+    if (github_repo && validRepoUrl.test(github_repo) && title && description && skills && email) {
         
             console.log(github_repo, title, description, email, skills, data_created);
             const response = await fetch(`/api/user/newpost`, {
@@ -36,7 +36,7 @@ const newPostHandler = async (event) => {
             }
     }
     else {
-        alert('Please fill out all fields')
+        alert('Please fill out all fields and enter a valid GitHub repo URL')
     }
 };
 
